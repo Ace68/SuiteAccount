@@ -16,9 +16,28 @@ namespace SuiteAccount.Controllers
         }
 
         [HttpPost]
-        public void CreateAccount()
+        public void CreateAccount(string username, string password)
         {
-            const string username = "Ace68";
+            if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password)) return;
+
+            var accountId = new AccountId(new Guid());
+            this._accountProvider.CreateAccount(accountId, username, password);
+        }
+
+        [HttpPost]
+        public void UpdateEmail(Guid userId, string email)
+        {
+            if (userId == Guid.Empty) return;
+
+            var accountId = new AccountId(userId);
+            this._accountProvider.UpdateEmail(accountId, email);
+        }
+
+        #region Test
+        [HttpPost]
+        public void CreateAccountTest()
+        {
+            const string username = "Test";
             const string password = "password";
 
             var accountId = new AccountId(new Guid());
@@ -26,13 +45,13 @@ namespace SuiteAccount.Controllers
         }
 
         [HttpPost]
-        public void UpdateEmail()
+        public void UpdateEmailTest()
         {
-            //20ed38d2-5058-4e78-9b57-7152920f3b05
             Guid userId;
-            Guid.TryParse("2ffb528d-19ee-462d-b520-d36ea4283ec7", out userId);
+            Guid.TryParse("a1cdd601-318b-4b80-ace4-98f7538f86c1", out userId);
             var accountId = new AccountId(userId);
-            this._accountProvider.UpdateEmail(accountId, "a.acerbis@infocopy.it");
+            this._accountProvider.UpdateEmail(accountId, "test.second@infocopy.it");
         }
+        #endregion
     }
 }

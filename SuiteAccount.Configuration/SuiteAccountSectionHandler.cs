@@ -2,34 +2,53 @@
 
 namespace SuiteAccount.Configuration
 {
-    public class SuiteAccountSectionHandler : ConfigurationSection
+    public class EventStoreSectionHandler : ConfigurationSection
     {
-        [ConfigurationProperty("eventStoreUri", IsRequired = true)]
-        public string EventStoreUri
+        [ConfigurationProperty("uri", DefaultValue = "127.0.0.1", IsRequired = true)]
+        public string Uri
         {
-            get { return (string) this["eventStoreUri"]; }
-            set { this["eventStoreUri"] = value; }
+            get { return (string)this["uri"]; }
+            set { this["uri"] = value; }
         }
 
-        [ConfigurationProperty("eventStorePort", IsRequired = true)]
-        public int EventStorePort
+        [ConfigurationProperty("port", DefaultValue = 1113, IsRequired = true)]
+        public int Port
         {
-            get { return (int)this["eventStorePort"]; }
-            set { this["eventStorePort"] = value; }
+            get { return (int)this["port"]; }
+            set { this["port"] = value; }
         }
 
-        [ConfigurationProperty("eventStoreUser", IsRequired = true)]
-        public string EventStoreUser
+        [ConfigurationProperty("user", DefaultValue = "admin", IsRequired = true)]
+        public string User
         {
-            get { return (string)this["eventStoreUser"]; }
-            set { this["eventStoreUser"] = value; }
+            get { return (string)this["user"]; }
+            set { this["user"] = value; }
         }
 
-        [ConfigurationProperty("eventStorePassword", IsRequired = true)]
-        public string EventStorePassword
+        [ConfigurationProperty("password", DefaultValue = "changeit", IsRequired = true)]
+        public string Password
         {
-            get { return (string)this["eventStorePassword"]; }
-            set { this["eventStorePassword"] = value; }
+            get { return (string)this["password"]; }
+            set { this["password"] = value; }
         }
+    }
+
+    public class MongoDbSectionHandler : ConfigurationSection
+    {
+        #region MongoDb
+        [ConfigurationProperty("uri", IsRequired = true)]
+        public string Uri
+        {
+            get { return (string)this["uri"]; }
+            set { this["uri"] = value; }
+        }
+
+        [ConfigurationProperty("port", DefaultValue = 27017, IsRequired = true)]
+        public int Port
+        {
+            get { return (int)this["port"]; }
+            set { this["port"] = value; }
+        }
+        #endregion
     }
 }

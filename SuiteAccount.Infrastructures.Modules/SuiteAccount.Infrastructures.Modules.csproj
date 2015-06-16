@@ -57,6 +57,7 @@
     <Compile Include="EventHandlersModule.cs" />
     <Compile Include="EventStoreRepositoryModule.cs" />
     <Compile Include="LoggingModule.cs" />
+    <Compile Include="NoSqlModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProvidersModule.cs" />
     <Compile Include="QueryModelModule.cs" />
@@ -91,6 +92,14 @@
     <ProjectReference Include="..\SuiteAccount.Logging\SuiteAccount.Logging.csproj">
       <Project>{c1077e96-9536-47e0-b2d5-f2dc5a8c2cef}</Project>
       <Name>SuiteAccount.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Denormalizer\SuiteAccount.NoSql.Denormalizer.csproj">
+      <Project>{ab1fae0b-9300-4a5b-bacf-ac33a92594eb}</Project>
+      <Name>SuiteAccount.NoSql.Denormalizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Persistence\SuiteAccount.NoSql.Persistence.csproj">
+      <Project>{f7d23a6a-4f79-41f7-94ea-c69a496077d9}</Project>
+      <Name>SuiteAccount.NoSql.Persistence</Name>
     </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Providers\SuiteAccount.Providers.csproj">
       <Project>{c3ef86f7-6a05-426d-9475-5dc421297798}</Project>

@@ -7,6 +7,9 @@ using SuiteAccount.Domain.Commands;
 using SuiteAccount.Domain.CommandsHandlers;
 using SuiteAccount.Domain.Events;
 using SuiteAccount.Infrastructure.Abstracts;
+using SuiteAccount.NoSql.Denormalizer.DomainEventsHandlers;
+using SuiteAccount.NoSql.Persistence.Abstracts;
+using SuiteAccount.NoSql.Persistence.Entities;
 using SuiteAccount.QueryModel.Denormalizer.Abstracts;
 using SuiteAccount.QueryModel.Denormalizer.DomainEventsHandlers;
 
@@ -38,6 +41,11 @@ namespace SuiteAccount.Infrastructures.Modules
             var account = new AccountEventsHandler(accountDenormalizer);
             serviceBus.RegisterHandler<AccountCreated>(account.Handle);
             serviceBus.RegisterHandler<EmailUpdated>(account.Handle);
+
+            var accountRepository = container.Get<IDocumentRepository<NoSqlAccount>>();
+            var accountNoSql = new NoSqlAccountEventsHandler(accountRepository);
+            serviceBus.RegisterHandler<AccountCreated>(accountNoSql.Handle);
+            serviceBus.RegisterHandler<EmailUpdated>(accountNoSql.Handle);
         }
     }
 }

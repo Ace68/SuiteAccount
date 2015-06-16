@@ -32,8 +32,6 @@ namespace SuiteAccount.Infrastructure.Concretes
                 this._logService.LoggerTrace(string.Format("Nessun CommandHandler Trovato per il Comando {0}", command.GetType()));
                 throw new Exception(string.Format("Nessun CommandHandler Trovato per il Comando {0}", command.GetType()));
             }
-
-            //this._container.Resolve<IHandleCommand<T>>().Handle(command);
         }
 
         public void RegisterHandler<T>(Action<T> handler) where T : MessageBase

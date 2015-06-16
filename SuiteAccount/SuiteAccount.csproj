@@ -309,9 +309,21 @@
       <Project>{de2fd267-3216-44ed-844c-5aca8740f574}</Project>
       <Name>SuiteAccount.Configuration</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Domain.Commands\SuiteAccount.Domain.Commands.csproj">
+      <Project>{e5ddcc3f-85db-4e1f-875b-ff598dd5b870}</Project>
+      <Name>SuiteAccount.Domain.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Domain.Events\SuiteAccount.Domain.Events.csproj">
+      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
+      <Name>SuiteAccount.Domain.Events</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Domain.Shared\SuiteAccount.Domain.Shared.csproj">
       <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
       <Name>SuiteAccount.Domain.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Domain\SuiteAccount.Domain.csproj">
+      <Project>{477eee1c-d243-46ab-a541-f5689176676c}</Project>
+      <Name>SuiteAccount.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.EventStore.Persistence\SuiteAccount.EventStore.Persistence.csproj">
       <Project>{cbadaefe-a145-4090-8e7c-feb417d26ef1}</Project>
@@ -324,6 +336,34 @@
     <ProjectReference Include="..\SuiteAccount.Infrastructure\SuiteAccount.Infrastructure.csproj">
       <Project>{5bdef7f9-71f0-4d53-8303-7e5236e5b92c}</Project>
       <Name>SuiteAccount.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Logging\SuiteAccount.Logging.csproj">
+      <Project>{c1077e96-9536-47e0-b2d5-f2dc5a8c2cef}</Project>
+      <Name>SuiteAccount.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Denormalizer\SuiteAccount.NoSql.Denormalizer.csproj">
+      <Project>{ab1fae0b-9300-4a5b-bacf-ac33a92594eb}</Project>
+      <Name>SuiteAccount.NoSql.Denormalizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Persistence\SuiteAccount.NoSql.Persistence.csproj">
+      <Project>{f7d23a6a-4f79-41f7-94ea-c69a496077d9}</Project>
+      <Name>SuiteAccount.NoSql.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Providers\SuiteAccount.Providers.csproj">
+      <Project>{c3ef86f7-6a05-426d-9475-5dc421297798}</Project>
+      <Name>SuiteAccount.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.QueryModel.Denormalizer\SuiteAccount.QueryModel.Denormalizer.csproj">
+      <Project>{a7a7ff4a-9662-4e4a-ab97-2aa49394dba5}</Project>
+      <Name>SuiteAccount.QueryModel.Denormalizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.QueryModel.Persistence\SuiteAccount.QueryModel.Persistence.csproj">
+      <Project>{b56bb6af-8bd1-47e7-a25f-baffca685071}</Project>
+      <Name>SuiteAccount.QueryModel.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.QueryModel\SuiteAccount.QueryModel.csproj">
+      <Project>{16f4c894-66d8-4889-9737-147682bd0023}</Project>
+      <Name>SuiteAccount.QueryModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

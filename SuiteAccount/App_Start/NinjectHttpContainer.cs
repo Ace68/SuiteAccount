@@ -45,7 +45,8 @@ namespace SuiteAccount
                 new EventHandlersModule(),
                 new EventStoreRepositoryModule(),
                 new ProvidersModule(),
-                new QueryModelModule()
+                new QueryModelModule(),
+                new NoSqlModule()
             };
         }
     }
