@@ -2,7 +2,7 @@
 using SuiteAccount.Domain.Events;
 using SuiteAccount.Infrastructure.Abstracts;
 using SuiteAccount.NoSql.Denormalizer.DomainEventsHandlers;
-using SuiteAccount.QueryModel.Denormalizer.DomainEventsHandlers;
+using SuiteAccount.SqlModel.Denormalizer.DomainEventsHandlers;
 
 namespace SuiteAccount.Infrastructures.Modules
 {

@@ -1,9 +1,9 @@
 ﻿using Ninject.Modules;
 
-using SuiteAccount.QueryModel.Denormalizer.Abstracts;
-using SuiteAccount.QueryModel.Denormalizer.Concretes;
-using SuiteAccount.QueryModel.Persistence.Persistors;
-using SuiteAccount.QueryModel.Persistors;
+using SuiteAccount.SqlModel.Denormalizer.Abstracts;
+using SuiteAccount.SqlModel.Denormalizer.Concretes;
+using SuiteAccount.SqlModel.Persistence.Persistors;
+using SuiteAccount.SqlModel.Persistors;
 
 namespace SuiteAccount.Infrastructures.Modules
 {

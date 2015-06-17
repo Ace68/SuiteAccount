@@ -1,5 +1,5 @@
 ﻿using Ninject.Modules;
-using SuiteAccount.NoSql.Persistence.Abstracts;
+using SuiteAccount.NoSql.Model.Abstracts;
 using SuiteAccount.NoSql.Persistence.Entities;
 using SuiteAccount.NoSql.Persistence.Repositories;
 

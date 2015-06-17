@@ -212,8 +212,6 @@ namespace SuiteAccount.EventStore.Persistence
 
             var eventClrTypeName = JObject.Parse(Encoding.UTF8.GetString(metadata)).Property(EventStoreCore.EventClrTypeHeader).Value;
 
-            var eventBase = (EventBase)JsonConvert.DeserializeObject(Encoding.UTF8.GetString(data), Type.GetType((string)eventClrTypeName));
-
             return (EventBase)JsonConvert.DeserializeObject(Encoding.UTF8.GetString(data), Type.GetType((string)eventClrTypeName));
         }
     }

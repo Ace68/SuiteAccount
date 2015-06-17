@@ -42,7 +42,7 @@ namespace SuiteAccount
                 new LoggingModule(),
                 new CommandHandlersModule(),
                 new ServiceBusModule(),
-                new EventHandlersModule(),
+                //new EventHandlersModule(),
                 new EventStoreRepositoryModule(),
                 new ProvidersModule(),
                 new QueryModelModule(),

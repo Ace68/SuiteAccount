@@ -3,7 +3,7 @@
 using MongoDB.Driver;
 
 using SuiteAccount.Configuration;
-using SuiteAccount.NoSql.Persistence.Abstracts;
+using SuiteAccount.NoSql.Model.Abstracts;
 
 namespace SuiteAccount.NoSql.Persistence.Repositories
 {

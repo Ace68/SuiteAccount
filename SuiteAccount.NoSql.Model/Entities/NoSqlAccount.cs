@@ -1,11 +1,9 @@
 ﻿using System;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
 using SuiteAccount.NoSql.Model.Abstracts;
 
-
-namespace SuiteAccount.NoSql.Persistence.Entities
+namespace SuiteAccount.NoSql.Model.Entities
 {
     [BsonIgnoreExtraElements]
     public class NoSqlAccount : MongoEntity

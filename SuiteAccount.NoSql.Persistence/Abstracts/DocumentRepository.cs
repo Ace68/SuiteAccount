@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using MongoDB.Driver;
 
+using SuiteAccount.NoSql.Model.Abstracts;
 using SuiteAccount.NoSql.Persistence.Repositories;
 
 namespace SuiteAccount.NoSql.Persistence.Abstracts

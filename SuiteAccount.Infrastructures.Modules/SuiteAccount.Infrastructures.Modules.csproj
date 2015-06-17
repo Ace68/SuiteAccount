@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandHandlersModule.cs" />
-    <Compile Include="EventHandlersModule.cs" />
     <Compile Include="EventStoreRepositoryModule.cs" />
     <Compile Include="LoggingModule.cs" />
     <Compile Include="NoSqlModule.cs" />
@@ -97,6 +96,10 @@
       <Project>{ab1fae0b-9300-4a5b-bacf-ac33a92594eb}</Project>
       <Name>SuiteAccount.NoSql.Denormalizer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Model\SuiteAccount.NoSql.Model.csproj">
+      <Project>{67cb1b9f-cd9d-4d95-a410-af1750e39150}</Project>
+      <Name>SuiteAccount.NoSql.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.NoSql.Persistence\SuiteAccount.NoSql.Persistence.csproj">
       <Project>{f7d23a6a-4f79-41f7-94ea-c69a496077d9}</Project>
       <Name>SuiteAccount.NoSql.Persistence</Name>
@@ -105,17 +108,17 @@
       <Project>{c3ef86f7-6a05-426d-9475-5dc421297798}</Project>
       <Name>SuiteAccount.Providers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.QueryModel.Denormalizer\SuiteAccount.QueryModel.Denormalizer.csproj">
+    <ProjectReference Include="..\SuiteAccount.SqlModel.Denormalizer\SuiteAccount.SqlModel.Denormalizer.csproj">
       <Project>{a7a7ff4a-9662-4e4a-ab97-2aa49394dba5}</Project>
-      <Name>SuiteAccount.QueryModel.Denormalizer</Name>
+      <Name>SuiteAccount.SqlModel.Denormalizer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.QueryModel.Persistence\SuiteAccount.QueryModel.Persistence.csproj">
+    <ProjectReference Include="..\SuiteAccount.SqlModel.Persistence\SuiteAccount.SqlModel.Persistence.csproj">
       <Project>{b56bb6af-8bd1-47e7-a25f-baffca685071}</Project>
-      <Name>SuiteAccount.QueryModel.Persistence</Name>
+      <Name>SuiteAccount.SqlModel.Persistence</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.QueryModel\SuiteAccount.QueryModel.csproj">
+    <ProjectReference Include="..\SuiteAccount.SqlModel\SuiteAccount.SqlModel.csproj">
       <Project>{16f4c894-66d8-4889-9737-147682bd0023}</Project>
-      <Name>SuiteAccount.QueryModel</Name>
+      <Name>SuiteAccount.SqlModel</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

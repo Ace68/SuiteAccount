@@ -48,7 +48,7 @@ namespace SuiteAccount.Controllers
         public void UpdateEmailTest()
         {
             Guid userId;
-            Guid.TryParse("a1cdd601-318b-4b80-ace4-98f7538f86c1", out userId);
+            Guid.TryParse("72118984-96d4-4920-b23c-ee7d99609532", out userId);
             var accountId = new AccountId(userId);
             this._accountProvider.UpdateEmail(accountId, "test.second@infocopy.it");
         }

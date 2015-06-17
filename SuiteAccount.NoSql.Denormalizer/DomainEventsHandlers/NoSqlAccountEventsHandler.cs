@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
+
 using MongoDB.Driver;
+
 using SuiteAccount.Domain.Events;
 using SuiteAccount.Infrastructure.Abstracts;
-using SuiteAccount.NoSql.Persistence.Abstracts;
+using SuiteAccount.NoSql.Model.Abstracts;
 using SuiteAccount.NoSql.Persistence.Entities;
 
 namespace SuiteAccount.NoSql.Denormalizer.DomainEventsHandlers

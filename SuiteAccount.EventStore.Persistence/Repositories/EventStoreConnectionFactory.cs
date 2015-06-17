@@ -33,6 +33,7 @@ namespace SuiteAccount.EventStore.Persistence.Repositories
 
             connectionSettings.SetHeartbeatTimeout(new TimeSpan(0, 5, 0));
             connectionSettings.SetHeartbeatInterval(new TimeSpan(0, 0, 25));
+            
 
             return EventStoreConnection.Create(connectionSettings, tcpEndPoint);
         }

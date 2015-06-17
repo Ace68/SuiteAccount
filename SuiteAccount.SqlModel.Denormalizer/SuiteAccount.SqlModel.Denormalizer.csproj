@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AB1FAE0B-9300-4A5B-BACF-AC33A92594EB}</ProjectGuid>
+    <ProjectGuid>{A7A7FF4A-9662-4E4A-AB97-2AA49394DBA5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SuiteAccount.NoSql.Denormalizer</RootNamespace>
-    <AssemblyName>SuiteAccount.NoSql.Denormalizer</AssemblyName>
+    <RootNamespace>SuiteAccount.SqlModel.Denormalizer</RootNamespace>
+    <AssemblyName>SuiteAccount.SqlModel.Denormalizer</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,49 +30,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\packages\MongoDB.Bson.2.0.1\lib\net45\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\packages\MongoDB.Driver.2.0.1\lib\net45\MongoDB.Driver.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver.Core">
-      <HintPath>..\packages\MongoDB.Driver.Core.2.0.1\lib\net45\MongoDB.Driver.Core.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DomainEventsHandlers\NoSqlEventsHandler.cs" />
-    <Compile Include="DomainEventsHandlers\NoSqlAccountEventsHandler.cs" />
+    <Compile Include="Abstracts\IAccountDenormalizer.cs" />
+    <Compile Include="Concretes\AccountDenormalizer.cs" />
+    <Compile Include="DomainEventsHandlers\AccountEventsHandler.cs" />
+    <Compile Include="DomainEventsHandlers\EventsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SuiteAccount.Domain.Events\SuiteAccount.Domain.Events.csproj">
       <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
       <Name>SuiteAccount.Domain.Events</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Domain.Shared\SuiteAccount.Domain.Shared.csproj">
+      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
+      <Name>SuiteAccount.Domain.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Infrastructure\SuiteAccount.Infrastructure.csproj">
       <Project>{5bdef7f9-71f0-4d53-8303-7e5236e5b92c}</Project>
       <Name>SuiteAccount.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.NoSql.Model\SuiteAccount.NoSql.Model.csproj">
-      <Project>{67cb1b9f-cd9d-4d95-a410-af1750e39150}</Project>
-      <Name>SuiteAccount.NoSql.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.NoSql.Persistence\SuiteAccount.NoSql.Persistence.csproj">
-      <Project>{f7d23a6a-4f79-41f7-94ea-c69a496077d9}</Project>
-      <Name>SuiteAccount.NoSql.Persistence</Name>
+    <ProjectReference Include="..\SuiteAccount.SqlModel\SuiteAccount.SqlModel.csproj">
+      <Project>{16f4c894-66d8-4889-9737-147682bd0023}</Project>
+      <Name>SuiteAccount.SqlModel</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

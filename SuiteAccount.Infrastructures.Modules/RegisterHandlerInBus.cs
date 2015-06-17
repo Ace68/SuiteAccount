@@ -8,10 +8,10 @@ using SuiteAccount.Domain.CommandsHandlers;
 using SuiteAccount.Domain.Events;
 using SuiteAccount.Infrastructure.Abstracts;
 using SuiteAccount.NoSql.Denormalizer.DomainEventsHandlers;
-using SuiteAccount.NoSql.Persistence.Abstracts;
+using SuiteAccount.NoSql.Model.Abstracts;
 using SuiteAccount.NoSql.Persistence.Entities;
-using SuiteAccount.QueryModel.Denormalizer.Abstracts;
-using SuiteAccount.QueryModel.Denormalizer.DomainEventsHandlers;
+using SuiteAccount.SqlModel.Denormalizer.Abstracts;
+using SuiteAccount.SqlModel.Denormalizer.DomainEventsHandlers;
 
 namespace SuiteAccount.Infrastructures.Modules
 {

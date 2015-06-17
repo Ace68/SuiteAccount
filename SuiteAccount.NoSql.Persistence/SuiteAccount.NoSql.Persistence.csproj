@@ -50,9 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\DocumentRepository.cs" />
-    <Compile Include="Abstracts\IDocumentRepository.cs" />
-    <Compile Include="Abstracts\IMongoEntity.cs" />
-    <Compile Include="Abstracts\MongoEntity.cs" />
     <Compile Include="Entities\NoSqlAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MongoConnectionHandler.cs" />
@@ -65,6 +62,10 @@
     <ProjectReference Include="..\SuiteAccount.Configuration\SuiteAccount.Configuration.csproj">
       <Project>{de2fd267-3216-44ed-844c-5aca8740f574}</Project>
       <Name>SuiteAccount.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Model\SuiteAccount.NoSql.Model.csproj">
+      <Project>{67cb1b9f-cd9d-4d95-a410-af1750e39150}</Project>
+      <Name>SuiteAccount.NoSql.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
