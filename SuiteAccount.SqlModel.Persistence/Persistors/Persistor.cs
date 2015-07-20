@@ -15,15 +15,15 @@ namespace SuiteAccount.SqlModel.Persistence.Persistors
     internal class Persistor<TEntity> : IPersistor<TEntity> where TEntity : DtoBase
     {
         private readonly ILogService _logService;
-        private readonly SqlModelFacade _SqlModelFacade;
+        private readonly SqlModelFacade _sqlModelFacade;
         internal DbSet<TEntity> DbSet;
 
-        public Persistor(SqlModelFacade SqlModelFacade,
+        public Persistor(SqlModelFacade sqlModelFacade,
             ILogService logService)
         {
             this._logService = logService;
-            this._SqlModelFacade = SqlModelFacade;
-            this.DbSet = SqlModelFacade.Set<TEntity>();
+            this._sqlModelFacade = sqlModelFacade;
+            this.DbSet = sqlModelFacade.Set<TEntity>();
         }
 
         public void Insert(TEntity entityToAdd)
@@ -34,7 +34,7 @@ namespace SuiteAccount.SqlModel.Persistence.Persistors
         public void Update(TEntity entityToUpdate)
         {
             this.DbSet.Attach(entityToUpdate);
-            this._SqlModelFacade.Entry(entityToUpdate).State = EntityState.Modified;
+            this._sqlModelFacade.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
         public void Delete(Guid id)
@@ -47,7 +47,7 @@ namespace SuiteAccount.SqlModel.Persistence.Persistors
 
         public void Delete(TEntity entityToDelete)
         {
-            if (this._SqlModelFacade.Entry(entityToDelete).State == EntityState.Detached)
+            if (this._sqlModelFacade.Entry(entityToDelete).State == EntityState.Detached)
             {
                 this.DbSet.Attach(entityToDelete);
             }

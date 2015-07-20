@@ -63,16 +63,15 @@
     <Compile Include="Concretes\SuiteServiceBus.cs" />
     <Compile Include="Core\EventStoreCore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\IAccountProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SuiteAccount.Domain.Shared\SuiteAccount.Domain.Shared.csproj">
-      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
-      <Name>SuiteAccount.Domain.Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Logging\SuiteAccount.Logging.csproj">
       <Project>{c1077e96-9536-47e0-b2d5-f2dc5a8c2cef}</Project>
       <Name>SuiteAccount.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Shared\SuiteAccount.Shared.csproj">
+      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
+      <Name>SuiteAccount.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

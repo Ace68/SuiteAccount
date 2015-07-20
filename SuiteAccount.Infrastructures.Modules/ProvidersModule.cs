@@ -1,6 +1,7 @@
 ﻿using Ninject.Modules;
-using SuiteAccount.Infrastructure.Providers;
 using SuiteAccount.Providers;
+using SuiteAccount.Providers.Abstracts;
+using SuiteAccount.Providers.Concretes;
 
 namespace SuiteAccount.Infrastructures.Modules
 {
@@ -8,7 +9,8 @@ namespace SuiteAccount.Infrastructures.Modules
     {
         public override void Load()
         {
-            Bind<IAccountProvider>().To<AccountProvider>().InSingletonScope();
+            this.Bind<IAccountProvider>().To<AccountProvider>().InSingletonScope();
+            this.Bind<ISuiteTokenProvider>().To<SuiteTokenProvider>().InSingletonScope();
         }
     }
 }

@@ -1,10 +1,10 @@
 ﻿using System;
 using CommonDomain.Persistence;
 
-using SuiteAccount.Domain.Commands;
+using SuiteAccount.Messages.Commands;
 using SuiteAccount.Domain.Entities;
 using SuiteAccount.Infrastructure.Abstracts;
-using SuiteAccount.Domain.Shared.Concretes;
+using SuiteAccount.Shared.ValueObjects;
 
 namespace SuiteAccount.Domain.CommandsHandlers
 {
@@ -29,7 +29,9 @@ namespace SuiteAccount.Domain.CommandsHandlers
             var account = this.Get<Account>(command.AggregateId, this.SuiteRepository);
             var accountId = new AccountId(account.Id);
             var emailAddress = new EmailAddress(command.Email);
+
             account.UpdateEmail(accountId, emailAddress);
+
             this.SuiteRepository.Save(account, Guid.NewGuid(), d => { });
         }
     }

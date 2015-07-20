@@ -44,41 +44,36 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracts\EntityBase.cs" />
     <Compile Include="Abstracts\IEntityBase.cs" />
     <Compile Include="CommandsHandlers\AccountCommandsHandler.cs" />
     <Compile Include="CommandsHandlers\CommandsHandler.cs" />
+    <Compile Include="CommandsHandlers\SuiteTokenCommandsHandler.cs" />
     <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\SuiteToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SuiteAccount.Domain.Commands\SuiteAccount.Domain.Commands.csproj">
-      <Project>{e5ddcc3f-85db-4e1f-875b-ff598dd5b870}</Project>
-      <Name>SuiteAccount.Domain.Commands</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.Domain.Events\SuiteAccount.Domain.Events.csproj">
-      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
-      <Name>SuiteAccount.Domain.Events</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.Domain.Shared\SuiteAccount.Domain.Shared.csproj">
-      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
-      <Name>SuiteAccount.Domain.Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Infrastructure\SuiteAccount.Infrastructure.csproj">
       <Project>{5bdef7f9-71f0-4d53-8303-7e5236e5b92c}</Project>
       <Name>SuiteAccount.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Messages.Commands\SuiteAccount.Messages.Commands.csproj">
+      <Project>{e5ddcc3f-85db-4e1f-875b-ff598dd5b870}</Project>
+      <Name>SuiteAccount.Messages.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Messages.Events\SuiteAccount.Messages.Events.csproj">
+      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
+      <Name>SuiteAccount.Messages.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Shared\SuiteAccount.Shared.csproj">
+      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
+      <Name>SuiteAccount.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

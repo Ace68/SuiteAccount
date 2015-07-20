@@ -2,9 +2,9 @@
 
 using CommonDomain.Core;
 
-using SuiteAccount.Domain.Events;
-using SuiteAccount.Domain.Shared.Concretes;
-using SuiteAccount.Domain.Shared.Exceptions;
+using SuiteAccount.Messages.Events;
+using SuiteAccount.Shared.Exceptions;
+using SuiteAccount.Shared.ValueObjects;
 
 namespace SuiteAccount.Domain.Entities
 {
@@ -37,14 +37,6 @@ namespace SuiteAccount.Domain.Entities
             if (String.IsNullOrEmpty(password))
                 throw new ArgumentNullException("password", DomainExceptions.PasswordNullException);
 
-            this.Id = accountId.Id;
-            this.UserName = userName;
-            this.Password = password;
-            this.CreationDate = DateTime.UtcNow;
-            this.IsApproved = false;
-            this.IsOnline = false;
-            this.IsLockedOut = true;
-
             this.RaiseEvent(new AccountCreated(accountId.Id, userName, password));
         }
 
@@ -68,9 +60,7 @@ namespace SuiteAccount.Domain.Entities
                 throw new ArgumentNullException("accountId", DomainExceptions.AccountIdNullException);
 
             // Nessun controllo per emailAddress ... sto passando i dati tramite un ValueObject,
-            // immutabile e con le sue regole di validazione, quindi assegno e sollevo l'evento ...
-            this.Email = emailAddress;
-
+            // immutabile e con le sue regole di validazione, quindi sollevo l'evento ...
             this.RaiseEvent(new EmailUpdated(accountId.Id, emailAddress.Email));
         }
 

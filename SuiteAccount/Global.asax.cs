@@ -3,6 +3,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebApi.Hal;
 
 namespace SuiteAccount
 {
@@ -17,6 +18,17 @@ namespace SuiteAccount
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             NinjectHttpContainer.RegisterModules();
+
+            // default media type (HAL JSON)
+            GlobalConfiguration.Configuration.Formatters.Insert(
+                0, new JsonHalMediaTypeFormatter()
+            );
+
+            // alternative media type (HAL XML)
+            // accept header must equal application/hal+xml
+            GlobalConfiguration.Configuration.Formatters.Insert(
+                1, new XmlHalMediaTypeFormatter()
+            );
         }
     }
 }

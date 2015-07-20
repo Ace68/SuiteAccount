@@ -1,0 +1,15 @@
+﻿Install-Package Microsoft.AspNet.WebApi.Owin        
+Install-Package Microsoft.Owin.Host.SystemWeb       // Used to enable our Owin server to run our API on IIS
+
+Install-Package Microsoft.AspNet.Identity.Owin      // Add support for ASP.NET Identity Owin
+
+// Add support for using ASP.NET Identity with Entity Framework 
+// so we can save users to SQL Server database
+Install-Package Microsoft.AspNet.Identity.EntityFramework
+// Not used in this project!
+
+Install-Package Microsoft.Owin.Security.OAuth       // Add support for OAuth Bearer Tokens Generation
+
+Install-Package Microsoft.Owin.Cors                 // Allow CORS for ASP.NET Web API
+
+Install-Package Ninject.Web.WebApi.OwinHost

@@ -4,7 +4,6 @@ using MongoDB.Bson.Serialization.Attributes;
 
 using SuiteAccount.NoSql.Model.Abstracts;
 
-
 namespace SuiteAccount.NoSql.Persistence.Entities
 {
     [BsonIgnoreExtraElements]

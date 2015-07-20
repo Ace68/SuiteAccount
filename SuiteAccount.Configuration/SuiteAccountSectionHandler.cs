@@ -35,7 +35,6 @@ namespace SuiteAccount.Configuration
 
     public class MongoDbSectionHandler : ConfigurationSection
     {
-        #region MongoDb
         [ConfigurationProperty("uri", IsRequired = true)]
         public string Uri
         {
@@ -49,6 +48,15 @@ namespace SuiteAccount.Configuration
             get { return (int)this["port"]; }
             set { this["port"] = value; }
         }
-        #endregion
+    }
+
+    public class SuiteTokenSectionHandler : ConfigurationSection
+    {
+        [ConfigurationProperty("duration", DefaultValue = 240, IsRequired = true)]
+        public int Duration
+        {
+            get { return (int) this["duration"]; }
+            set { this["duration"] = value; }
+        }
     }
 }

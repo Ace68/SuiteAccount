@@ -51,6 +51,14 @@
       <HintPath>..\packages\Common.Logging.NLog20.3.1.0\lib\net40\Common.Logging.NLog20.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
@@ -68,11 +76,25 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -89,17 +111,11 @@
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
-    <Reference Include="System.Net.Http.Formatting, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.WebRequest">
     </Reference>
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.2\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=__MvcPagesVersion__, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
@@ -130,6 +146,9 @@
     <Reference Include="WebActivatorEx">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
+    <Reference Include="WebApi.Hal">
+      <HintPath>..\packages\WebApi.Hal.2.5.1\lib\net45\WebApi.Hal.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -140,20 +159,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -227,8 +237,10 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountCommandsController.cs" />
+    <Compile Include="Controllers\AccountQueryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TokenController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -276,7 +288,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -309,18 +323,6 @@
       <Project>{de2fd267-3216-44ed-844c-5aca8740f574}</Project>
       <Name>SuiteAccount.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.Domain.Commands\SuiteAccount.Domain.Commands.csproj">
-      <Project>{e5ddcc3f-85db-4e1f-875b-ff598dd5b870}</Project>
-      <Name>SuiteAccount.Domain.Commands</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.Domain.Events\SuiteAccount.Domain.Events.csproj">
-      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
-      <Name>SuiteAccount.Domain.Events</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.Domain.Shared\SuiteAccount.Domain.Shared.csproj">
-      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
-      <Name>SuiteAccount.Domain.Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Domain\SuiteAccount.Domain.csproj">
       <Project>{477eee1c-d243-46ab-a541-f5689176676c}</Project>
       <Name>SuiteAccount.Domain</Name>
@@ -345,13 +347,41 @@
       <Project>{ab1fae0b-9300-4a5b-bacf-ac33a92594eb}</Project>
       <Name>SuiteAccount.NoSql.Denormalizer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Model\SuiteAccount.NoSql.Model.csproj">
+      <Project>{67cb1b9f-cd9d-4d95-a410-af1750e39150}</Project>
+      <Name>SuiteAccount.NoSql.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.NoSql.Persistence\SuiteAccount.NoSql.Persistence.csproj">
       <Project>{f7d23a6a-4f79-41f7-94ea-c69a496077d9}</Project>
       <Name>SuiteAccount.NoSql.Persistence</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Services\SuiteAccount.NoSql.Services.csproj">
+      <Project>{af9c008d-a9f9-4b00-9400-203b3187dd93}</Project>
+      <Name>SuiteAccount.NoSql.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Providers\SuiteAccount.Providers.csproj">
       <Project>{c3ef86f7-6a05-426d-9475-5dc421297798}</Project>
       <Name>SuiteAccount.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Shared\SuiteAccount.Shared.csproj">
+      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
+      <Name>SuiteAccount.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.SqlModel.Denormalizer\SuiteAccount.SqlModel.Denormalizer.csproj">
+      <Project>{a7a7ff4a-9662-4e4a-ab97-2aa49394dba5}</Project>
+      <Name>SuiteAccount.SqlModel.Denormalizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.SqlModel.Persistence\SuiteAccount.SqlModel.Persistence.csproj">
+      <Project>{b56bb6af-8bd1-47e7-a25f-baffca685071}</Project>
+      <Name>SuiteAccount.SqlModel.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.SqlModel.Services\SuiteAccount.SqlModel.Services.csproj">
+      <Project>{a71e955b-e053-4b66-95cc-df6351278b0e}</Project>
+      <Name>SuiteAccount.SqlModel.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.SqlModel\SuiteAccount.SqlModel.csproj">
+      <Project>{16f4c894-66d8-4889-9737-147682bd0023}</Project>
+      <Name>SuiteAccount.SqlModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -50,19 +50,20 @@
   <ItemGroup>
     <Compile Include="DomainEventsHandlers\NoSqlEventsHandler.cs" />
     <Compile Include="DomainEventsHandlers\NoSqlAccountEventsHandler.cs" />
+    <Compile Include="DomainEventsHandlers\NoSqlSuiteTokenEventsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SuiteAccount.Domain.Events\SuiteAccount.Domain.Events.csproj">
-      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
-      <Name>SuiteAccount.Domain.Events</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Infrastructure\SuiteAccount.Infrastructure.csproj">
       <Project>{5bdef7f9-71f0-4d53-8303-7e5236e5b92c}</Project>
       <Name>SuiteAccount.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Messages.Events\SuiteAccount.Messages.Events.csproj">
+      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
+      <Name>SuiteAccount.Messages.Events</Name>
     </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.NoSql.Model\SuiteAccount.NoSql.Model.csproj">
       <Project>{67cb1b9f-cd9d-4d95-a410-af1750e39150}</Project>
@@ -71,6 +72,14 @@
     <ProjectReference Include="..\SuiteAccount.NoSql.Persistence\SuiteAccount.NoSql.Persistence.csproj">
       <Project>{f7d23a6a-4f79-41f7-94ea-c69a496077d9}</Project>
       <Name>SuiteAccount.NoSql.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.NoSql.Services\SuiteAccount.NoSql.Services.csproj">
+      <Project>{af9c008d-a9f9-4b00-9400-203b3187dd93}</Project>
+      <Name>SuiteAccount.NoSql.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Shared\SuiteAccount.Shared.csproj">
+      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
+      <Name>SuiteAccount.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

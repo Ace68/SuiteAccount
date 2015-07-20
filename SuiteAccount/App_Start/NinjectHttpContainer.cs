@@ -40,13 +40,11 @@ namespace SuiteAccount
             return new INinjectModule[]
             {
                 new LoggingModule(),
-                new CommandHandlersModule(),
                 new ServiceBusModule(),
-                //new EventHandlersModule(),
                 new EventStoreRepositoryModule(),
                 new ProvidersModule(),
-                new QueryModelModule(),
-                new NoSqlModule()
+                new QuerySqlModule(),
+                new QueryNoSqlModule()
             };
         }
     }

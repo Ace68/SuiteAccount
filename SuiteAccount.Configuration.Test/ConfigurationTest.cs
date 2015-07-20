@@ -6,9 +6,9 @@ namespace SuiteAccount.Configuration.Test
     public class ConfigurationTest
     {
         [Test]
-        public void GetEventStoreUri()
+        public void GetQueryContextConnectionString()
         {
-            Assert.AreEqual("127.0.0.1", SuiteAccountConfiguration.EventStoreSection.Uri);
+            Assert.AreEqual(@"Data Source=.\SQLEXPRESS;Initial Catalog=SuiteAccount;Integrated Security=SSPI", SuiteAccountConfiguration.QueryContext);
         }
     }
 }

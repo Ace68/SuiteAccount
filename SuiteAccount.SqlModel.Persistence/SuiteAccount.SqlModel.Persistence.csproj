@@ -35,13 +35,15 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facade\QueryModelFacade.cs" />
-    <Compile Include="Mappings\AccountMap.cs" />
+    <Compile Include="Facade\SqlModelFacade.cs" />
+    <Compile Include="Mappings\DtoAccountMap.cs" />
     <Compile Include="Mappings\BaseMapping.cs" />
+    <Compile Include="Mappings\DtoSuiteApplicationMap.cs" />
+    <Compile Include="Mappings\DtoSuiteTokenMap.cs" />
     <Compile Include="Migrations\201506110849210_InitQueryModel.cs" />
     <Compile Include="Migrations\201506110849210_InitQueryModel.Designer.cs">
       <DependentUpon>201506110849210_InitQueryModel.cs</DependentUpon>
@@ -67,7 +69,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

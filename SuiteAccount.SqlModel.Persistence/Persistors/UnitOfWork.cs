@@ -12,16 +12,27 @@ namespace SuiteAccount.SqlModel.Persistence.Persistors
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {
-        private readonly SqlModelFacade _SqlModelFacade;
+        private readonly SqlModelFacade _sqlModelFacade;
         private readonly ILogService _logService;
 
         public UnitOfWork(ILogService logService)
         {
-            this._SqlModelFacade = new SqlModelFacade();
+            this._sqlModelFacade = new SqlModelFacade();
             this._logService = logService;
         }
 
         #region Persistors
+        private IPersistor<DtoSuiteApplication> _applicationPersistor;
+        public IPersistor<DtoSuiteApplication> ApplicationPersistor
+        {
+            get
+            {
+                return this._applicationPersistor ??
+                       (this._applicationPersistor =
+                           new Persistor<DtoSuiteApplication>(this._sqlModelFacade, this._logService));
+            }
+        }
+
         private IPersistor<DtoAccount> _accountPersistor;
         public IPersistor<DtoAccount> AccountPersistor
         {
@@ -29,18 +40,28 @@ namespace SuiteAccount.SqlModel.Persistence.Persistors
             {
                 return this._accountPersistor ??
                        (this._accountPersistor =
-                           new Persistor<DtoAccount>(this._SqlModelFacade, this._logService));
+                           new Persistor<DtoAccount>(this._sqlModelFacade, this._logService));
+            }
+        }
+
+        private IPersistor<DtoSuiteToken> _suiteTokenPersistor;
+        public IPersistor<DtoSuiteToken> SuiteTokenPersistor
+        {
+            get
+            {
+                return this._suiteTokenPersistor ??
+                       (this._suiteTokenPersistor = new Persistor<DtoSuiteToken>(this._sqlModelFacade, this._logService));
             }
         }
         #endregion
 
         public async Task CommitAsync()
         {
-            using (var suiteContextTransaction = this._SqlModelFacade.Database.BeginTransaction())
+            using (var suiteContextTransaction = this._sqlModelFacade.Database.BeginTransaction())
             {
                 try
                 {
-                    await this._SqlModelFacade.SaveChangesAsync();
+                    await this._sqlModelFacade.SaveChangesAsync();
                     suiteContextTransaction.Commit();
                 }
                 catch (DbEntityValidationException ex)
@@ -78,7 +99,7 @@ namespace SuiteAccount.SqlModel.Persistence.Persistors
             {
                 if (disposing)
                 {
-                    this._SqlModelFacade.Dispose();
+                    this._sqlModelFacade.Dispose();
                 }
             }
             this._disposed = true;

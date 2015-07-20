@@ -5,6 +5,7 @@ using System.Web.Http.Dependencies;
 
 using Ninject;
 using Ninject.Modules;
+
 using SuiteAccount.EventStore.Persistence;
 using SuiteAccount.Infrastructures.Modules;
 

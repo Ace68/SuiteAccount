@@ -32,15 +32,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dtos\DtoAccount.cs" />
     <Compile Include="Dtos\DtoBase.cs" />
+    <Compile Include="Dtos\DtoSuiteApplication.cs" />
+    <Compile Include="Dtos\DtoSuiteToken.cs" />
     <Compile Include="Persistors\IUnitOfWork.cs" />
     <Compile Include="Persistors\IPersistor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

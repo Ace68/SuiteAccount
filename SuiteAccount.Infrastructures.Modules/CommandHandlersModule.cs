@@ -10,8 +10,12 @@ namespace SuiteAccount.Infrastructures.Modules
         public override void Load()
         {
             #region Account
-            Bind<IHandleCommand<CreateAccount>>().To<AccountCommandsHandler>().InSingletonScope();
-            Bind<IHandleCommand<UpdateEmail>>().To<AccountCommandsHandler>().InSingletonScope();
+            this.Bind<IHandleCommand<CreateAccount>>().To<AccountCommandsHandler>().InSingletonScope();
+            this.Bind<IHandleCommand<UpdateEmail>>().To<AccountCommandsHandler>().InSingletonScope();
+            #endregion
+
+            #region Token
+            this.Bind<IHandleCommand<CreateSuiteToken>>().To<SuiteTokenCommandsHandler>().InSingletonScope();
             #endregion
         }
     }

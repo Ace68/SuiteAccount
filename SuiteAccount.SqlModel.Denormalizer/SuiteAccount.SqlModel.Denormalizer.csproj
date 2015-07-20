@@ -34,24 +34,27 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstracts\IAccountDenormalizer.cs" />
-    <Compile Include="Concretes\AccountDenormalizer.cs" />
     <Compile Include="DomainEventsHandlers\AccountEventsHandler.cs" />
     <Compile Include="DomainEventsHandlers\EventsHandler.cs" />
+    <Compile Include="DomainEventsHandlers\SuiteTokenEventsHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SuiteAccount.Domain.Events\SuiteAccount.Domain.Events.csproj">
-      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
-      <Name>SuiteAccount.Domain.Events</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SuiteAccount.Domain.Shared\SuiteAccount.Domain.Shared.csproj">
-      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
-      <Name>SuiteAccount.Domain.Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.Infrastructure\SuiteAccount.Infrastructure.csproj">
       <Project>{5bdef7f9-71f0-4d53-8303-7e5236e5b92c}</Project>
       <Name>SuiteAccount.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Messages.Events\SuiteAccount.Messages.Events.csproj">
+      <Project>{8db26571-f45f-4440-9d5b-fde84eb5902d}</Project>
+      <Name>SuiteAccount.Messages.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.Shared\SuiteAccount.Shared.csproj">
+      <Project>{248e1120-b54e-42d3-9935-8ac72f6b42c4}</Project>
+      <Name>SuiteAccount.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuiteAccount.SqlModel.Services\SuiteAccount.SqlModel.Services.csproj">
+      <Project>{a71e955b-e053-4b66-95cc-df6351278b0e}</Project>
+      <Name>SuiteAccount.SqlModel.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\SuiteAccount.SqlModel\SuiteAccount.SqlModel.csproj">
       <Project>{16f4c894-66d8-4889-9737-147682bd0023}</Project>

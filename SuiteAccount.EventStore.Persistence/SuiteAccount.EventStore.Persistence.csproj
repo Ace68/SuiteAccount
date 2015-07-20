@@ -63,9 +63,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\SuiteAccount.Configuration\SuiteAccount.Configuration.csproj">
       <Project>{de2fd267-3216-44ed-844c-5aca8740f574}</Project>
       <Name>SuiteAccount.Configuration</Name>

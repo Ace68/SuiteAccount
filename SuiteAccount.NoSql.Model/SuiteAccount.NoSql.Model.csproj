@@ -48,10 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstracts\IDocumentRepository.cs" />
+    <Compile Include="Abstracts\IDocumentPersistor.cs" />
     <Compile Include="Abstracts\IMongoEntity.cs" />
+    <Compile Include="Abstracts\INoSqlUnitOfWork.cs" />
     <Compile Include="Abstracts\MongoEntity.cs" />
-    <Compile Include="Entities\NoSqlAccount.cs" />
+    <Compile Include="Documents\NoSqlAccount.cs" />
+    <Compile Include="Documents\NoSqlSuiteApplication.cs" />
+    <Compile Include="Documents\NoSqlSuiteToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
